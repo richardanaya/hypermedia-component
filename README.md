@@ -31,7 +31,7 @@ See the demo [here](http://richardanaya.github.io/hypermedia-component/dist/inde
 | `src`         | `string` | ✅       | The URL to fetch the HTML fragment from.                                   |
 | `credentials` | `string` | ❌       | Controls whether to send cookies 🍪 and credentials. Options: `include`, `same-origin`, `omit`. |
 | `method`      | `string` | ❌       | HTTP method to use for the request (`GET`, `POST`, etc.). Defaults to `GET`.|
-| `form-data`   | `string` | ❌       | JSON string representing form data to send in the body of a POST request.  |
+| `form-data`   | `string` | ❌       | JSON string representing form data to send in the body of a Non-GET, Non-DELETE request.  |
 | `headers`     | `string` | ❌       | JSON string of custom headers to include in the request.                   |
 | `mode`        | `string` | ❌       | The fetch mode (`cors`, `no-cors`, `same-origin`, `navigate`).             |
 
