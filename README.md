@@ -1,18 +1,44 @@
-# Hypermedia Component
+# HypermediaComponent
 
-The `HypermediaComponent` is a custom HTML element designed to simplify the integration of hypermedia-driven content into your web applications. It is particularly useful when working with libraries like [HTMX](https://htmx.org/) that emphasize hypermedia as the engine of application state. This component allows you to fetch and embed HTML fragments dynamically, making it easier to build interactive and modular web applications.
+The `HypermediaComponent` is a custom HTML element designed to simplify the integration of hypermedia-driven content into web applications. It is especially useful when used alongside [HTMX](https://htmx.org/), which embraces hypermedia as the engine of application state.
 
-## Why Use This Component with HTMX?
+This component fetches and embeds HTML fragments dynamically, enabling the creation of interactive and modular user interfaces with minimal JavaScript.
 
-HTMX enables you to extend HTML with attributes for AJAX requests, WebSockets, and more. The `HypermediaComponent` complements HTMX by:
+---
 
-- **Decoupling Content**: Dynamically fetch and embed HTML fragments from external sources, keeping your HTML modular and reusable.
-- **Declarative Syntax**: Use simple HTML attributes to configure the component, reducing the need for JavaScript.
-- **Enhanced Flexibility**: Supports custom HTTP methods, headers, and form data, making it adaptable to various backend APIs.
+## Why Use HypermediaComponent with HTMX?
 
-## How to Use
+The `HypermediaComponent` complements HTMX by providing:
 
-### Basic Usage
+- **Decoupled Content**: Dynamically load external HTML fragments, promoting reuse and modularity.
+- **Declarative Syntax**: Configure behavior through HTML attributes, reducing JavaScript complexity.
+- **Enhanced Flexibility**: Customize HTTP methods, headers, form data, and credentials to suit various backend APIs.
+
+---
+
+## Installation
+
+Include the script in your HTML file:
+
+```html
+<script src="./hypermedia-component.js"></script>
+```
+
+## Attributes
+
+## HypermediaComponent Attributes
+
+| Attribute     | Type     | Required | Description                                                                 |
+|---------------|----------|----------|-----------------------------------------------------------------------------|
+| `src`         | `string` | ✅       | The URL to fetch the HTML fragment from.                                   |
+| `method`      | `string` | ❌       | HTTP method to use for the request (`GET`, `POST`, etc.). Defaults to `GET`.|
+| `form-data`   | `string` | ❌       | JSON string representing form data to send in the body of a POST request.  |
+| `headers`     | `string` | ❌       | JSON string of custom headers to include in the request.                   |
+| `credentials` | `string` | ❌       | Controls whether to send cookies and credentials. Options: `include`, `same-origin`, `omit`. |
+| `mode`        | `string` | ❌       | The fetch mode (`cors`, `no-cors`, `same-origin`, `navigate`).             |
+
+
+## Usage Examples
 
 To use the `HypermediaComponent`, include the JavaScript file in your HTML and add the custom element with the required `src` attribute:
 
@@ -24,6 +50,22 @@ To use the `HypermediaComponent`, include the JavaScript file in your HTML and a
 # Examples
 Fetching Content with GET
 This fetches the content of fragment.html using a GET request and embeds it into the component.
+
+# Using Credentials
+
+```html
+<hypermedia-component 
+  src="./secure-endpoint" 
+  credentials="include">
+</hypermedia-component>
+```
+
+This sets the credentials mode to include, allowing cookies and authentication headers to be sent with the request. The credentials attribute supports the following values:
+
+include: Always send credentials (cookies, HTTP authentication, etc.) with the request.
+same-origin: Only send credentials if the request is to the same origin as the document.
+omit: Never send credentials with the request.
+
 
 # Sending Form Data with POST
 

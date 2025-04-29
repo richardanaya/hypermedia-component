@@ -9,7 +9,7 @@ class HypermediaComponent extends HTMLElement {
     if (this.wasAttached) return;
     this.wasAttached = true;
 
-    const url = this.getAttribute("src");
+    let url = this.getAttribute("src");
     if (!url) {
       console.error("No URL provided for hypermedia component");
       return;
@@ -84,8 +84,18 @@ class HypermediaComponent extends HTMLElement {
 
     // mode
     const mode = this.getAttribute("mode") || undefined;
-    if (!["cors", "no-cors", "same-origin"].includes(mode)) {
+    if (mode && !["cors", "no-cors", "same-origin"].includes(mode)) {
       console.error("Invalid mode provided for hypermedia component");
+      return;
+    }
+
+    // credentials
+    const credentials = this.getAttribute("credentials") || undefined;
+    if (
+      credentials &&
+      !["include", "same-origin", "omit"].includes(credentials)
+    ) {
+      console.error("Invalid credentials provided for hypermedia component");
       return;
     }
 
@@ -98,8 +108,8 @@ class HypermediaComponent extends HTMLElement {
         ...headers,
       },
       mode,
-      body: method === "POST" ? JSON.stringify(formData) : null,
-      credentials: "include",
+      body: formData ? JSON.stringify(formData) : undefined,
+      credentials,
     })
       .then((response) => {
         if (!response.ok) {
