@@ -29,10 +29,10 @@ See the demo [here](http://richardanaya.github.io/hypermedia-component/dist/inde
 | Attribute     | Type     | Required | Description                                                                 |
 |---------------|----------|----------|-----------------------------------------------------------------------------|
 | `src`         | `string` | ✅       | The URL to fetch the HTML fragment from.                                   |
+| `credentials` | `string` | ❌       | Controls whether to send cookies 🍪 and credentials. Options: `include`, `same-origin`, `omit`. |
 | `method`      | `string` | ❌       | HTTP method to use for the request (`GET`, `POST`, etc.). Defaults to `GET`.|
 | `form-data`   | `string` | ❌       | JSON string representing form data to send in the body of a POST request.  |
 | `headers`     | `string` | ❌       | JSON string of custom headers to include in the request.                   |
-| `credentials` | `string` | ❌       | Controls whether to send cookies and credentials. Options: `include`, `same-origin`, `omit`. |
 | `mode`        | `string` | ❌       | The fetch mode (`cors`, `no-cors`, `same-origin`, `navigate`).             |
 
 
@@ -41,9 +41,8 @@ See the demo [here](http://richardanaya.github.io/hypermedia-component/dist/inde
 To use the `HypermediaComponent`, include the JavaScript file in your HTML and add the custom element with the required `src` attribute:
 
 ```html
-<script src="./hypermedia-component.js"></script>
-
 <hypermedia-component src="./fragment.html"></hypermedia-component>
+```
 
 # Examples
 Fetching Content with GET
