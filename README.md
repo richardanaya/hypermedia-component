@@ -99,3 +99,7 @@ The component logs errors to the console for invalid attributes, failed requests
 
 # Conclusion
 The HypermediaComponent is a powerful tool for building modular, hypermedia-driven web applications. By combining it with HTMX, you can create dynamic and interactive user interfaces with minimal JavaScript. ``
+
+# Art
+
+![Hypermedia Component](https://github.com/user-attachments/assets/ae57c52a-14af-481a-ae48-94fbc1a1f4d2)
