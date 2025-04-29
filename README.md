@@ -20,7 +20,7 @@ Include the script in your HTML file:
 <script src="https://cdn.jsdelivr.net/gh/richardanaya/hypermedia-component/hypermedia-component.js"></script>
 ```
 
-See the demo [here](http://richardanaya.github.io/hypermedia-component/dist/index.html)
+See the demo [here](https://richardanaya.github.io/hypermedia-component/)
 
 ## Attributes
 
