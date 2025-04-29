@@ -4,8 +4,6 @@ The `HypermediaComponent` is a custom HTML element designed to simplify the inte
 
 This component fetches and embeds HTML fragments dynamically, enabling the creation of interactive and modular user interfaces with minimal JavaScript.
 
----
-
 ## Why Use HypermediaComponent with HTMX?
 
 The `HypermediaComponent` complements HTMX by providing:
@@ -14,15 +12,15 @@ The `HypermediaComponent` complements HTMX by providing:
 - **Declarative Syntax**: Configure behavior through HTML attributes, reducing JavaScript complexity.
 - **Enhanced Flexibility**: Customize HTTP methods, headers, form data, and credentials to suit various backend APIs.
 
----
-
 ## Installation
 
 Include the script in your HTML file:
 
 ```html
-<script src="./hypermedia-component.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/richardanaya/hypermedia-component/hypermedia-component.js"></script>
 ```
+
+See the demo [here](http://richardanaya.github.io/hypermedia-component/dist/index.html)
 
 ## Attributes
 
